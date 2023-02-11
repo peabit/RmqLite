@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "Sender\Sender.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmq.Interfaces", "MQInterfaces\Rmq.Interfaces.csproj", "{A3FADEFD-C1EB-4463-A354-0DA74D878528}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmq.Services", "Rmq.Services\Rmq.Services.csproj", "{8C3D7305-8521-430C-8DD5-3C9A0954E397}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3D7305-8521-430C-8DD5-3C9A0954E397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3D7305-8521-430C-8DD5-3C9A0954E397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3D7305-8521-430C-8DD5-3C9A0954E397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3D7305-8521-430C-8DD5-3C9A0954E397}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
