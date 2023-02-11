@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "Sender\Sender.csproj", "{C1CF205D-3E74-4F58-9685-5546EB8CB469}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rmq.Interfaces", "MQInterfaces\Rmq.Interfaces.csproj", "{A3FADEFD-C1EB-4463-A354-0DA74D878528}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C1CF205D-3E74-4F58-9685-5546EB8CB469}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1CF205D-3E74-4F58-9685-5546EB8CB469}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1CF205D-3E74-4F58-9685-5546EB8CB469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3FADEFD-C1EB-4463-A354-0DA74D878528}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
