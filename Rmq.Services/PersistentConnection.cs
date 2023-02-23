@@ -4,9 +4,8 @@ using Polly.Retry;
 using System.Net.Sockets;
 using RabbitMQ.Client.Exceptions;
 using Polly;
-using Rmq.Interfaces;
 
-namespace Rmq.Services;
+namespace RmqLite;
 
 public sealed class PersistentConnection : IPersistentConnection
 {

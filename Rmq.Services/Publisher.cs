@@ -6,9 +6,8 @@ using RabbitMQ.Client.Exceptions;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
-using Rmq.Interfaces;
 
-namespace Rmq.Services;
+namespace RmqLite;
 
 public sealed class Publisher : IPublisher
 {
@@ -57,9 +56,26 @@ public sealed class Publisher : IPublisher
 
                 _logger.LogTrace("Publishing message {MessageType} to RMQ", messageType);
 
+                channel.ExchangeDeclare(
+                    exchange: messageType, 
+                    type: "fanout" 
+                );
+
+                channel.QueueDeclare(
+                    queue: messageType,
+                    durable: true,
+                    exclusive: false,
+                    autoDelete: false
+                );
+
+                channel.QueueBind(
+                    queue: messageType, 
+                    exchange: messageType, 
+                    routingKey: string.Empty);
+
                 channel.BasicPublish(
-                    exchange: String.Empty,
-                    routingKey: messageType,
+                    exchange: messageType,
+                    routingKey: string.Empty,
                     basicProperties: properties,
                     body: messageBytes
                 );

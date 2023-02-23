@@ -1,7 +1,6 @@
 using RabbitMQ.Client;
 using Rmq.Interfaces;
 using Rmq.Services;
-using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
