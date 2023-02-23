@@ -5,11 +5,25 @@ using RmqLite.Interfaces;
 
 namespace RmqLite;
 
-public static class ServicesExtension
+public static class ServicesExtensions
 {
-    public static void AddRmqLite(this IServiceCollection services, Action<ISubscriptionsConfigurator>? configureConsumers = null)
+    public static void AddRmqLite(
+        this IServiceCollection services, 
+        IConfiguration? configuration = null, 
+        Action<ISubscriptionsConfigurator>? configureConsumers = null
+    )
     {
-        services.AddSingleton<IConnectionFactory>(new ConnectionFactory(){ DispatchConsumersAsync = true });
+        var connectionFactory = new ConnectionFactory { DispatchConsumersAsync = true };
+
+        if (configuration is not null)
+        {
+            var rabbitMqConfig = configuration.GetSection("RabbitMQ");
+            connectionFactory.HostName = rabbitMqConfig.GetSection("HostName").Value;
+            connectionFactory.UserName = rabbitMqConfig.GetSection("UserName").Value;
+            connectionFactory.Password = rabbitMqConfig.GetSection("Password").Value;
+        }
+
+        services.AddSingleton<IConnectionFactory>(connectionFactory);
         services.AddSingleton<IPersistentConnection, PersistentConnection>();
         services.AddTransient<IPublisher, Publisher>();
 

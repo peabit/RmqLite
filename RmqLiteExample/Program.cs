@@ -6,7 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddRmqLite(s => s.Subscribe<Consumer, Message>());
+builder.Services.AddRmqLite(builder.Configuration, c =>
+{
+    c.Subscribe<Consumer, Message>();
+});
 
 var app = builder.Build();
 
